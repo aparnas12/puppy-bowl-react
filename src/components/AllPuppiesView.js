@@ -1,13 +1,10 @@
-import React, { useState } from 'react';
+
 import SinglePuppyCard from './SinglePuppyCard';
-
-
-
 
 
 export default function AllPuppiesView(props) {
    
-   const {puppies,selectedPuppy,setSelectedPuppy} = props;
+   const {puppies,setPuppies,selectedPuppy,setSelectedPuppy} = props;
 
     return (
         <>
@@ -15,7 +12,7 @@ export default function AllPuppiesView(props) {
             {puppies.map((pup) => {
 
                 return (<>
-                         <SinglePuppyCard key = {pup.id} pup = {pup} selectedPuppy = {selectedPuppy} setSelectedPuppy ={setSelectedPuppy}/>
+                         <SinglePuppyCard key = {pup.id} pup = {pup}  selectedPuppy = {selectedPuppy} setSelectedPuppy ={setSelectedPuppy} puppies = {puppies} setPuppies = {setPuppies}/>
                         </>
 
                 );

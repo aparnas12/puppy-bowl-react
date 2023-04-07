@@ -8,8 +8,8 @@ export default function SinglePuppyDetailedView(props){
           <p className="pup-title">{selectedPuppy.name}</p>
           <p className="pup-number">{selectedPuppy.id}</p>
         </div>
-        <p>Team: {selectedPuppy.breed} </p>
-        <p>Breed: </p>
+        <p>Team:  </p>
+        <p>Breed:{selectedPuppy.breed} </p>
         <img src="https://learndotresources.s3.amazonaws.com/workshop/60ad725bbe74cd0004a6cba0/puppybowl-default-dog.png" alt="photo of a puppy" />
         <button 
         onClick = {() => {

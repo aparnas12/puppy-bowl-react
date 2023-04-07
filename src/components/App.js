@@ -87,9 +87,9 @@ const App = () => {
   console.log('selected puppy:',selectedPuppy);
     return (
         <>
-            <PuppyInputForm />
-           
-            {selectedPuppy.id ? <SinglePuppyDetailedView selectedPuppy = {selectedPuppy} setSelectedPuppy ={setSelectedPuppy}/>  : <AllPuppiesView puppies ={puppies} selectedPuppy ={selectedPuppy} setSelectedPuppy ={setSelectedPuppy} />}
+            <PuppyInputForm puppies = {puppies} setPuppies = {setPuppies}/>
+            
+            {selectedPuppy.id ? <SinglePuppyDetailedView selectedPuppy = {selectedPuppy} setSelectedPuppy ={setSelectedPuppy}/>  : <AllPuppiesView puppies ={puppies} selectedPuppy ={selectedPuppy} setSelectedPuppy ={setSelectedPuppy} setPuppies ={setPuppies}/>}
             {/* <AllPuppiesView puppies ={puppies} selectedPuppy ={selectedPuppy} setSelectedPuppy ={setSelectedPuppy} /> */}
             {/* <SinglePuppyDetailedView/> */}
         </>
