@@ -5,6 +5,7 @@ import AllPuppiesView from './AllPuppiesView';
 import SinglePuppyDetailedView from './SinglePuppyDetailedView';
 import { fetchAllPlayers } from '../ajaxHelpers';
 
+
 let fakePuppies = [
     {
         "id": 3127,
@@ -67,6 +68,7 @@ const App = () => {
 
     const [puppies, setPuppies] =useState([]);
    const [selectedPuppy, setSelectedPuppy] = useState({});
+  
 
     useEffect(() => {
         const getPuppies = async () => {
@@ -81,17 +83,16 @@ const App = () => {
         getPuppies();
       }, []);
 
-//   useEffect(() => {
-//     setPuppies(fakePuppies);
-//   }, []);
+  // useEffect(() => {
+  //   setPuppies(fakePuppies);
+  // }, []);
+
   console.log('selected puppy:',selectedPuppy);
     return (
         <>
             <PuppyInputForm puppies = {puppies} setPuppies = {setPuppies}/>
-            
             {selectedPuppy.id ? <SinglePuppyDetailedView selectedPuppy = {selectedPuppy} setSelectedPuppy ={setSelectedPuppy}/>  : <AllPuppiesView puppies ={puppies} selectedPuppy ={selectedPuppy} setSelectedPuppy ={setSelectedPuppy} setPuppies ={setPuppies}/>}
-            {/* <AllPuppiesView puppies ={puppies} selectedPuppy ={selectedPuppy} setSelectedPuppy ={setSelectedPuppy} /> */}
-            {/* <SinglePuppyDetailedView/> */}
+            
         </>
     );
 }

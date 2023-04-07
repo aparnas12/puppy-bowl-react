@@ -1,5 +1,5 @@
 import React from 'react';
-import { removePlayer} from '../ajaxHelpers';
+import { fetchAllPlayers, removePlayer} from '../ajaxHelpers';
 
 
 export default function SinglePuppyCard(props) {
@@ -17,18 +17,17 @@ export default function SinglePuppyCard(props) {
           <img src="https://learndotresources.s3.amazonaws.com/workshop/60ad725bbe74cd0004a6cba0/puppybowl-default-dog.png" alt="photo of the puppy" />
           <button 
             onClick = {()=>{
-              console.log('insdie single puppy card:',pup);
               setSelectedPuppy(pup);
             }}
           
           className="detail-button"> See Details</button>
           <button  //remove puppy
            onClick={async () => {
-            
+            setSelectedPuppy(pup);
             await removePlayer(pup.id);
             setSelectedPuppy({});
-            puppies.filter((thisPup) => pup.id !== thisPup.id)
-            setPuppies([...puppies] )
+            let allPups = await fetchAllPlayers();
+            setPuppies(allPups);
           }}
           className="remove-button"> Remove from Roster</button>
     </div>
@@ -37,6 +36,4 @@ export default function SinglePuppyCard(props) {
   );
 
 }
-
-//
 

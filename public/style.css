@@ -48,9 +48,10 @@
     margin: 5px 10px;
     padding: 10px;
     border-radius: 10px;
-  
+   
     display: flex;
     flex-direction: column;
+   
   }
   
   .single-puppy-view > p {
@@ -63,13 +64,24 @@
     justify-content: center;
     align-items:center;
     font-size: x-large;
+    border: 2px solid orange
   }
 
   .new-puppy-form input{
     margin: 10px;
   }
 
-  .new-puppy-form button, .detail-button{
+  .new-puppy-form button, .detail-button, .search-button{
     margin: 10px;
     font-size: large;
+  }
+
+  .search-bar{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items:center;
+    font-size: x-large;
+    margin:10px;
+    border: 2px solid orange;
   }

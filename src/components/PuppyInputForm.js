@@ -7,9 +7,6 @@ export default function PuppyInputForm(props) {
   const { puppies, setPuppies } = props;
   const [name, setName] = useState('');
   const [breed, setBreed] = useState('');
-  console.log('name is:', { name }, 'breed is', { breed });
-
-
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -39,7 +36,6 @@ export default function PuppyInputForm(props) {
           onChange={(event) => setBreed(event.target.value)} />
         <button type="submit">Submit</button>
       </div>
-
     </form>
   );
 }

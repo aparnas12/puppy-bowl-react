@@ -21,7 +21,6 @@ export const fetchSinglePlayer = async (playerId) => {
     try {
         const response = await fetch(`${APIURL}/players/${playerId}`);
         const singlePlayer = await response.json();
-        // console.log(singlePlayer.data.player);
         return singlePlayer.data.player;
     }
     catch (error) {
